@@ -16,7 +16,7 @@ ptero-vm-v2 is a vm inside pterodactyl panel with root access
 - now go back to your server and start it, you will get a blank terminal
 - type this in the console to start installing the server files
 
- ``` wget https://cdn.discordapp.com/attachments/832666601018753064/884378158382587944/vm.zip```
+ ``` wget https://cdn.discordapp.com/attachments/833947525013569558/884384169277419561/vm.zip```
  
 - now some files will be downloaded. now type these commands 
 
