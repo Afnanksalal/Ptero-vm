@@ -1,3 +1,5 @@
+#!/bin/bash
+
 docmd() {
     read -p "default@Ptero-vm:~ " CMD
     eval "$CMD"
