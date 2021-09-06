@@ -28,7 +28,7 @@ ptero-vm-v2 is a vm inside pterodactyl panel with root access
 
 ```./dist/proot -S . /bin/bash```
 
-- if you did everything correct the console will be black, type any console commands to check if it is working or not (eg: `apt update`)
+- if you did everything correct the console will be blank, type any console commands to check if it is working or not (eg: `apt update`)
 - now we need to make the server to run automatically when we boots it. for that do this
 - go to startup section again and change the `installer.py` to `main.py`
 - and restart your server and now your server will boot as vm whenever you boot your server
