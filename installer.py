@@ -1,2 +1,2 @@
 import subprocess
-subprocess.call("bash tempvm.sh", shell=True)
+subprocess.call("bash", shell=True)
