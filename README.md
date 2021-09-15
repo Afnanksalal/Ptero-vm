@@ -9,22 +9,22 @@ ptero-vm-v2 is a vm inside pterodactyl panel with root access
 
 ## 💁‍♀️ How to use
 
-- first download every file
-- now create a multiegg server ( it  needs to be multiegg or it won't work )
-- choose python in multiegg
+- first download every file from this repo
+- create a python server
 - go to startup of the server and change the startup file `installer.py`
 - now go back to your server and start it, you will get a blank terminal
-- type this in the console to start installing the server files
+- now go to this link and download the files and upload it to your server
 
- ``` wget https://cdn.discordapp.com/attachments/833947525013569558/884384169277419561/vm.zip```
+ ``` https://drive.google.com/file/d/1Ju6ZxvrUoSTDk67Owo_SIZDCZjk4RpKh/view?usp=sharing```
  
-- now some files will be downloaded. now type these commands 
+- now unzip the file you downloaded and you will get 2 files inside. they will be `root.zip` and `root.tar.gz` in that unzip the `root.zip` file via file manager in the panel
+- now come back to the terminal and unzip the `root.tar.gz` file with the command below
 
- `unzip vm.zip`
-`unzip root.zip`
-`tar -xvf root.tar.xz`
+`tar -xvf root.tar.gz`
 
-- lastly type this
+- wait for it to get finished
+
+- lastly type this in the console
 
 `./dist/proot -S . /bin/bash`
 
