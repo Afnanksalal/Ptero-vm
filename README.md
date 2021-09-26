@@ -17,7 +17,7 @@ ptero-vm-v2 is a vm inside pterodactyl panel with root access
 
 `curl -o ptero-vm.zip http://fatgrizzly.mehost.us/ptero-vm.zip`
  
-- now unzip the file you downloaded and you will get 2 files inside. they will be `root.zip` and `root.tar.gz` in that unzip the `root.zip` file via file manager in the panel
+- now unzip the file you downloaded and you will get 2 files inside, the name of the file you downloaded will be `ptero-vm.zip`. they will be `root.zip` and `root.tar.gz` in that unzip the `root.zip` file via file manager in the panel
 - now come back to the terminal and unzip the `root.tar.gz` file with the command below
 
 `tar -xvf root.tar.gz`
