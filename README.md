@@ -13,9 +13,9 @@ ptero-vm-v2 is a vm inside pterodactyl panel with root access
 - create a python server
 - go to startup of the server and change the startup file `installer.py`
 - now go back to your server and start it, you will get a blank terminal
-- now go to this link and download the files and upload it to your server
+- now type the command below in the terminal
 
- ```https://drive.google.com/u/2/uc?id=1Ju6ZxvrUoSTDk67Owo_SIZDCZjk4RpKh&export=download```
+`curl -o ptero-vm.zip http://fatgrizzly.mehost.us/ptero-vm.zip`
  
 - now unzip the file you downloaded and you will get 2 files inside. they will be `root.zip` and `root.tar.gz` in that unzip the `root.zip` file via file manager in the panel
 - now come back to the terminal and unzip the `root.tar.gz` file with the command below
