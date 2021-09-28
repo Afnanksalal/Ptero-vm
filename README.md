@@ -36,4 +36,6 @@ ptero-vm-v2 is a vm inside pterodactyl panel with root access
 
 # Note
 
+if you get permission error while executing the  `./dist/proot -S . /bin/bash` command, type this in the terminal `chmod +x ./dist/proot` then again execute the  `./dist/proot -S . /bin/bash` command and it will work properly!
+
 this script is made for educational purposes only. pls use this on your own risk!
