@@ -11,6 +11,7 @@ ptero-vm is a vm inside pterodactyl panel with root access
 
 - first download every file from this repo
 - create a python server
+- upload every file into it
 - go to startup of the server and change the startup file `installer.py`
 - now go back to your server and start it and the script will be automatically installed!
 - now we need to make the server run automatically when we boot it, for that do this
