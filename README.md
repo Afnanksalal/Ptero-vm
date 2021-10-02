@@ -9,7 +9,12 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 ## 💁‍♀️ How to use
 
-- Grab `installer.sh` and run it, if you can't off the bat use the `installer.py` or `installer.js`(note: the js varient is not completed rightnow) file.
+- first make a server (js/py server)
+- then Grab the `installer.py` or `installer.js` file
+- then go to startup section of the server and name it `installer.py` (if u made python server and downloaded the installer.py file) or `installer.js` (if u made js server and downloaded the installer.js file)
+- now start the server and it will install the files for you
+- now to make the server run automatically whenever u start it, go to startup and change the startup name to `main.py` (if u made python server and downloaded the installer.py file) or `main.js` (if u made js server and downloaded the installer.js file)
+- and restart your server and everything will be fine
 
 
 # Note
