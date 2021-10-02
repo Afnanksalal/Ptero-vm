@@ -1,2 +1,2 @@
 import subprocess
-subprocess.call("bash installer.sh", shell=True)
+subprocess.call("echo Thanks for using Ptero-VM! && chmod +x installer.sh && ./installer.sh", shell=True)
