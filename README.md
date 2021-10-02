@@ -1,6 +1,6 @@
 # Ptero-vm
 
-PRoot-Instance inside of pterodactyl's docker container.
+Root-Instance inside of pterodactyl's docker container with Proot.
 
 ## ✨ Features
 
@@ -9,7 +9,7 @@ PRoot-Instance inside of pterodactyl's docker container.
 
 ## 💁‍♀️ How to use
 
-- Grab installer.sh and run it, if you can't off the bat use the included python or nodejs file.
+- Grab `installer.sh` and run it, if you can't off the bat use the `installer.py` or `installer.js`(note: the js varient is not completed rightnow) file.
 
 
 # Note
