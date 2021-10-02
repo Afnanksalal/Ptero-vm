@@ -9,7 +9,7 @@ PRoot-Instance inside of pterodactyl's docker container.
 
 ## 💁‍♀️ How to use
 
-- Grab installer.sh and run it, if you can't off the bat use the included python file.
+- Grab installer.sh and run it, if you can't off the bat use the included python or nodejs file.
 
 
 # Note
