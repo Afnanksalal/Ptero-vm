@@ -1,24 +1,17 @@
 # Ptero-vm
 
-ptero-vm is a vm inside pterodactyl panel with root access
+PRoot-Instance inside of pterodactyl's docker container.
 
 ## ✨ Features
 
-- root access
+- Root well, inside the docker container.
 - idk whatelse
 
 ## 💁‍♀️ How to use
 
-- first download every file from this repo
-- create a python server
-- upload every file into it
-- go to startup of the server and change the startup file `installer.py`
-- now go back to your server and start it and the script will be automatically installed!
-- now we need to make the server run automatically when we boot it, for that do this
-- go to startup section again and change the `installer.py` to `main.py`
-- and restart your server and now your server will boot as vm whenever you boot your server
+- Grab installer.sh and run it, if you can't off the bat use the included python file.
 
 
 # Note
 
-this script is made for educational purposes only. pls use this on your own risk!
+This script is for educational purposes, we are not responsible for anything that happens.
