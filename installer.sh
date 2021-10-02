@@ -20,7 +20,7 @@ ${bold}${lightgreen} :           :     : :: ::    :   : :   : :  :         :    
                                                                                                   
                                                                                                                 
 ${bold}${lightgreen}========================================================================
-${bold}${lightgreen}Credits, Giyu for the main features and Io.Netty for ideas and how to execute.
+${bold}${lightgreen}Credits, Dabi for making the script and Io.Netty for being a pain in the ass.
  "
 download_vm(){
 curl -o ptero-vm.zip https://fatgrizzly.mehost.us/ptero-vm.zip;
