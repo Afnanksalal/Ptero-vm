@@ -23,7 +23,7 @@ this script is configured to only support pterodactyl panel, if u want to make i
 
 __for now there is a bug while booting systemctl i have made a temp fix for it here are the steps:__
 - first download python3 and curl ( sudo apt install python3 , sudo apt install curl )
-- then ```curl -o systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py ``` <- paste this in the terminal
+- then download the systemctl file for that execute this command in the terminal ```curl -o systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py ```
 - then chmod the systemctl file (chmod +x systemctl)
 - then execute it (```./systemctl start wings``` if u are trying to run a pterodactyl wing inside the vm)
 
