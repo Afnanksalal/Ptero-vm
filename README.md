@@ -19,7 +19,7 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 # Note
 
-this script is configured to only support pterodactyl panel, if u want to make it support something like replit fork it and edit it.
+_this script is configured to only support pterodactyl panel, if u want to make it support something like replit fork it and edit it._
 
 __for now there is a bug while booting systemctl i have made a temp fix for it here are the steps:__
 - first download python3 and curl ( sudo apt install python3 , sudo apt install curl )
