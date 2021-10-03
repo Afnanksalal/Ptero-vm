@@ -27,7 +27,7 @@ __To fix systemctl:__
 
 ## ✨ Addons
 
- __gotty__
+ __gotty:__
  
  _GoTTY is a simple GoLang based command line tool that enables you to share your terminal(TTY) as a web application. It turns command line tools into web applications._
  
