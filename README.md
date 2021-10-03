@@ -19,4 +19,12 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 # Note
 
-This script is for educational purposes, we are not responsible for anything that happens.
+this script is configured to only support pterodactyl panel, if u want to make it support something like replit fork it and edit it.
+
+__for now there is a bug while booting systemctl i have made a temp fix for it here are the steps:__
+- first download python3 and curl ( sudo apt install python3 , sudo apt install curl )
+- then ```curl -o systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py ``` <- paste this in the terminal
+- then chmod the systemctl file (chmod +x systemctl)
+- then execute it (```./systemctl start wings``` if u are trying to run a pterodactyl wing inside the vm)
+
+**This script is for educational purposes, we are not responsible for anything that happens.**
