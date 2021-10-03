@@ -27,7 +27,18 @@ __To fix systemctl:__
 
 ## ✨ Addons
 
-- coming soon!
+ __gotty__
+ 
+ _GoTTY is a simple GoLang based command line tool that enables you to share your terminal(TTY) as a web application. It turns command line tools into web applications._
+ 
+ **to install gotty:**
+ 
+- first go to this link and download the gotty zip file for linux then extract it : https://github.com/yudai/gotty/releases/tag/v1.0.1
+- then u will get a shell script named gotty upload it to to ur server
+- now chmod it (chmod +x gotty)
+- then run gotty (./gotty -p **your_port_here** -w bash)
+- now it will be up and running, and it will show the ip and port of it in the console. copy paste it in ur browser and there you have remote terminal with gotty
+
 
 ## ✨ Note
 
