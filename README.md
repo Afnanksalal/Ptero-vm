@@ -1,4 +1,4 @@
-# Ptero-vm
+# Ptero-VM
 
 Root-Instance inside of pterodactyl's docker container with Proot.
 
@@ -27,7 +27,7 @@ __To fix systemctl:__
 
 ## ✨ Addons
 
- __gotty:__
+ __GoTTY:__
  
  _GoTTY is a simple GoLang based command line tool that enables you to share your terminal(TTY) as a web application. It turns command line tools into web applications._
  
