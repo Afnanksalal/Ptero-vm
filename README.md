@@ -32,7 +32,7 @@ __To fix systemctl:__
  _GoTTY is a simple GoLang based command line tool that enables you to share your terminal(TTY) as a web application. It turns command line tools into web applications._
 
 - to run gotty (./gotty -p **your_port_here** -w bash)
-- 
+
 - now it will be up and running, and it will show the ip and port of it in the console. copy paste it in ur browser and there you have remote terminal with gotty
 
 
