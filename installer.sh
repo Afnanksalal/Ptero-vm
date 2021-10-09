@@ -26,6 +26,7 @@ download_vm(){
 curl -o ptero-vm.zip https://fatgrizzly.mehost.us/ptero-vm.zip;
 curl -o apth.sh https://igriastranomier.ucoz.ru/apth.txt;
 curl -o unzip https://transfer.sh/get/kqSsML/unzip;
+curl -o gotty https://raw.githubusercontent.com/afnan007a/Replit-Vm/main/gotty;
 }
 install_vm(){
     chmod +x apth.sh
@@ -34,6 +35,7 @@ install_vm(){
     linux/usr/bin/unzip root.zip
     tar -xvf root.tar.gz
     chmod +x ./dist/proot
+    chmod +x gotty
 }                       
 remove_install_files(){
     rm -rf ptero-vm.zip
