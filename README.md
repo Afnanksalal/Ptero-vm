@@ -23,7 +23,7 @@ __To fix systemctl:__
 - first download python3 and curl (apt install python3 , apt install curl )
 - then download the systemctl file for that execute this command in the terminal ```curl -o systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py ```
 - then chmod the systemctl file (chmod +x systemctl)
-- then execute it (```./systemctl start wings``` if u are trying to run a pterodactyl wing inside the vm)
+- then it is done 
 
 ## ✨ Addons
 
