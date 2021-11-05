@@ -23,7 +23,7 @@ ${bold}${lightgreen}============================================================
  "
 download_vm(){
 curl -o ptero-vm.zip https://fatgrizzly.mehost.us/ptero-vm.zip;
-curl -o apth https://igriastranomier.ucoz.ru/apth.txt;
+curl -o apth https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/apth;
 curl -o unzip https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/unzip;
 curl -o gotty https://raw.githubusercontent.com/afnan007a/Replit-Vm/main/gotty;
 }
