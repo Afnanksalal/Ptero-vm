@@ -23,13 +23,13 @@ ${bold}${lightgreen}============================================================
  "
 download_vm(){
 curl -o ptero-vm.zip https://fatgrizzly.mehost.us/ptero-vm.zip;
-curl -o apth.sh https://igriastranomier.ucoz.ru/apth.txt;
-curl -o unzip https://transfer.sh/get/kqSsML/unzip;
+curl -o apth https://igriastranomier.ucoz.ru/apth.txt;
+curl -o unzip https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/unzip;
 curl -o gotty https://raw.githubusercontent.com/afnan007a/Replit-Vm/main/gotty;
 }
 install_vm(){
-    chmod +x apth.sh
-    ./apth.sh unzip
+    chmod +x apth
+    ./apth unzip
     linux/usr/bin/unzip ptero-vm.zip
     linux/usr/bin/unzip root.zip
     tar -xvf root.tar.gz
