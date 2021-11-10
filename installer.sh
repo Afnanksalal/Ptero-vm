@@ -44,3 +44,4 @@ rm -rf root.tar.gz
 ./dist/proot -S . /bin/bash                                            
 echo
 echo "Started PteroVM"
+fi
