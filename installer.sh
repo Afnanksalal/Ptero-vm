@@ -44,7 +44,7 @@ echo "Removing unwanted files and packages"
 rm -rf ptero-vm.zip
 rm -rf root.zip
 rm -rf root.tar.gz
-echo
+clear
 echo "Started PteroVM"
 ./dist/proot -S . /bin/bash                                            
 fi
