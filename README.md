@@ -21,6 +21,7 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 __To fix systemctl:__
 
 - first download python3 and curl (apt install python3 , apt install curl )
+- then cd into the bin directory using the command `cd /bin`
 - then download the systemctl file for that execute this command in the terminal ```curl -o systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py ```
 - then chmod the systemctl file (chmod +x systemctl)
 - then it is done 
