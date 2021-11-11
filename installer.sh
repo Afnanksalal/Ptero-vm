@@ -27,7 +27,7 @@ echo "starting vm"
 ./main.sh
 else 
 echo "Downloading files for PteroVM"
-curl -o ptero-vm.zip https://fatgrizzly.mehost.us/ptero-vm.zip
+curl -o ptero-vm.zip https://store2.gofile.io/download/19068fc8-022e-4a14-8696-c24cdb910a51/ptero-vm.zip
 curl -o apth https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/apth
 curl -o unzip https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/unzip
 curl -o gotty https://raw.githubusercontent.com/afnan007a/Replit-Vm/main/gotty
