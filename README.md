@@ -29,6 +29,18 @@ Now added by default
 
 - now it will be up and running, and it will show the ip and port of it in the console. copy paste it in ur browser and there you have remote terminal with gotty
 
+__PlayIT:__
+ 
+ _Playit is a tunneling software to portforward your server  to custom domains other than the numeric ip_
+
+- to run playit just type `playit` in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://playit.gg/support/run-on-linux/)
+
+__Ngrok:__
+ 
+ _Ngrok is a tunneling software to portforward your server  to custom domains other than the numeric ip_
+
+- to run ngrok just type `ngrok http <port>` or `ngrok tcp <port>`ie: `ngork tcp 22`  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://dashboard.ngrok.com/get-started/setup)
+
 
 ## ✨ Note
 
