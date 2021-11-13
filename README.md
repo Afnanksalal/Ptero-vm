@@ -29,7 +29,7 @@ Now added by default
 
 - now it will be up and running, and it will show the ip and port of it in the console. copy paste it in ur browser and there you have remote terminal with gotty
 
-__PlayIT:__
+__Playit:__
  
  _Playit is a tunneling software to portforward your server  to custom domains other than the numeric ip_
 
