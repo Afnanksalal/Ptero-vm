@@ -38,13 +38,13 @@ echo "${nc}"
 if [[ -f "./installed" ]]; then
     echo "Started PteroVM"
     function runcmd1 {
-        echo "${lightgreen}VM@PteroVM${nc}:${lightblue}~${nc}$"
+        printf "${lightgreen}user@PteroVM${nc}:${lightblue}~${nc}$"
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd
     }
     function runcmd {
-        echo "${lightgreen}VM@PteroVM${nc}:${lightblue}~${nc}$"
+        printf "${lightgreen}user@PteroVM${nc}:${lightblue}~${nc}$"
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd1
