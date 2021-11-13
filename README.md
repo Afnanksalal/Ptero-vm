@@ -39,7 +39,7 @@ __Ngrok:__
  
  _Ngrok is a tunneling software to portforward your server  to custom domains other than the numeric ip_
 
-- to run ngrok just type `ngrok http <port>` or `ngrok tcp <port>`ie: `ngork tcp 22`  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://dashboard.ngrok.com/get-started/setup)
+- to run ngrok just type `ngrok http <port>` or `ngrok tcp <port>`ie: `ngork tcp 22`  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://ngrok.com/docs)
 
 
 ## ✨ Note
