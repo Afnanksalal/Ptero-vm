@@ -58,20 +58,28 @@ else
     curl -sSLo gotty https://raw.githubusercontent.com/afnan007a/Replit-Vm/main/gotty
     chmod +x apth
     echo "Installing the files"
-    ./apth unzip curl python3 >/dev/null # redirect stdout to /dev/null, but not stderr
+    ./apth unzip >/dev/null 
     linux/usr/bin/unzip ptero-vm.zip
     linux/usr/bin/unzip root.zip
-    tar -xf root.tar.gz # disable verbose
+    tar -xf root.tar.gz 
     chmod +x ./dist/proot
-    chmod +x main.sh
     chmod +x gotty
     rm -rf ptero-vm.zip
     rm -rf root.zip
     rm -rf root.tar.gz
     clear
     touch installed
+     ./dist/proot -S . /bin/bash -c "mv gotty /usr/bin/"
+     ./dist/proot -S . /bin/bash -c "mv apth /usr/bin/"
+     ./dist/proot -S . /bin/bash -c "mv unzip /usr/bin/"
+     ./dist/proot -S . /bin/bash -c "apt-get -y update"
+     ./dist/proot -S . /bin/bash -c "apt-get -y upgrade"
+     ./dist/proot -S . /bin/bash -c "apt apt-get -y install sudo"
+     ./dist/proot -S . /bin/bash -c "sudo apt-get -y install curl"
+     ./dist/proot -S . /bin/bash -c "sudo apt-get -y install python3"
     ./dist/proot -S . /bin/bash -c "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py"
     ./dist/proot -S . /bin/bash -c "chmod +x /bin/systemctl"
+    ./dist/proot -S . /bin/bash -c "clear"
     echo "Started PteroVM"
     function runcmd1 {
         echo "${lightgreen}VM@PteroVM${nc}:${lightblue}~${nc}$"
