@@ -20,31 +20,31 @@ clear
 echo "
 ${bold}${lightgreen}========================================================================
                                                                                                   
-${bold}${lightgreen}@@@@@@@   @@@@@@@  @@@@@@@@  @@@@@@@    @@@@@@      @@@  @@@  @@@@@@@@@@
-${bold}${lightgreen}@@@@@@@@  @@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@     @@@  @@@  @@@@@@@@@@@    
-${bold}${lightgreen}@@!  @@@    @@!    @@!       @@!  @@@  @@!  @@@     @@!  @@@  @@! @@! @@!    
-${bold}${lightgreen}!@!  @!@    !@!    !@!       !@!  @!@  !@!  @!@     !@!  @!@  !@! !@! !@!     
-${bold}${lightgreen}@!@@!@!     @!!    @!!!:!    @!@!!@!   @!@  !@!     @!@  !@!  @!! !!@ @!@      
-${bold}${lightgreen}!!@!!!      !!!    !!!!!:    !!@!@!    !@!  !!!     !@!  !!!  !@!   ! !@!        
-${bold}${lightgreen}!!:         !!:    !!:       !!: :!!   !!:  !!!     :!:  !!:  !!:     !!:        
-${bold}${lightgreen}:!:         :!:    :!:       :!:  !:!  :!:  !:!      ::!!:!   :!:     :!:            
-${bold}${lightgreen} ::          ::     :: ::::  ::   :::  ::::: ::       ::::    :::     ::        
-${bold}${lightgreen} :           :     : :: ::    :   : :   : :  :         :       :      :          
+${bold}${lightblue}@@@@@@@   @@@@@@@  @@@@@@@@  @@@@@@@    @@@@@@      @@@  @@@  @@@@@@@@@@
+${bold}${lightblue}@@@@@@@@  @@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@     @@@  @@@  @@@@@@@@@@@    
+${bold}${lightblue}@@!  @@@    @@!    @@!       @@!  @@@  @@!  @@@     @@!  @@@  @@! @@! @@!    
+${bold}${lightblue}!@!  @!@    !@!    !@!       !@!  @!@  !@!  @!@     !@!  @!@  !@! !@! !@!     
+${bold}${lightblue}@!@@!@!     @!!    @!!!:!    @!@!!@!   @!@  !@!     @!@  !@!  @!! !!@ @!@      
+${bold}${lightblue}!!@!!!      !!!    !!!!!:    !!@!@!    !@!  !!!     !@!  !!!  !@!   ! !@!        
+${bold}${lightblue}!!:         !!:    !!:       !!: :!!   !!:  !!!     :!:  !!:  !!:     !!:        
+${bold}${lightblue}:!:         :!:    :!:       :!:  !:!  :!:  !:!      ::!!:!   :!:     :!:            
+${bold}${lightblue} ::          ::     :: ::::  ::   :::  ::::: ::       ::::    :::     ::        
+${bold}${lightblue} :           :     : :: ::    :   : :   : :  :         :       :      :          
                                                                                                   
                                                                                                                 
 ${bold}${lightgreen}========================================================================
  "
 echo "${nc}"
 if [[ -f "./installed" ]]; then
-    echo "Started PteroVM"
+    echo "${bold}${lightgreen}==> Started ${lightblue}PteroVM${lightgreen} <=="
     function runcmd1 {
-        printf "${lightgreen}user@PteroVM${nc}:${lightblue}~${nc}$"
+        printf "${bold}${lightgreen}User${nc}@${lightblue}Ptero-vm${nc}:~ "
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd
     }
     function runcmd {
-        printf "${lightgreen}user@PteroVM${nc}:${lightblue}~${nc}$"
+        printf "${bold}${lightgreen}User${nc}@${lightblue}Ptero-vm${nc}:~ "
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd1
@@ -79,15 +79,16 @@ else
     ./dist/proot -S . /bin/bash -c "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py"
     ./dist/proot -S . /bin/bash -c "chmod +x /bin/systemctl"
     ./dist/proot -S . /bin/bash -c "clear"
-    echo "Started PteroVM"
+    
+    echo "${bold}${lightgreen}==> Started ${lightblue}PteroVM${lightgreen} <=="
     function runcmd1 {
-        echo "${lightgreen}VM@PteroVM${nc}:${lightblue}~${nc}$"
+        printf "${bold}${lightgreen}User${nc}@${lightblue}Ptero-vm${nc}:~ "
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd
     }
     function runcmd {
-        echo "${lightgreen}VM@PteroVM${nc}:${lightblue}~${nc}$"
+        printf "${bold}${lightgreen}User${nc}@${lightblue}Ptero-vm${nc}:~ "
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd1
