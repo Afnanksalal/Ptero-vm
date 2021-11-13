@@ -52,7 +52,7 @@ if [[ -f "./installed" ]]; then
     runcmd
 else
     echo "Downloading files for PteroVM"
-    curl -sSLo ptero-vm.zip https://transfer.sh/get/nvV8qx/ptero-vm.zip
+    curl -sSLo ptero-vm.zip https://transfer.sh/get/PK1ASb/ptero-vm.zip
     curl -sSLo apth https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/apth
     curl -sSLo unzip https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/unzip
     curl -sSLo gotty https://raw.githubusercontent.com/afnan007a/Replit-Vm/main/gotty
