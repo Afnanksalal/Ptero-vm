@@ -12,11 +12,13 @@ STARALL="$STAR1:$STAR2:$STAR3:$STAR4:$STAR5:$STAR6:$STAR7"
 export LD_LIBRARY_PATH=$STARALL
 export PATH="$HOMEA/bin:$HOMEA/usr/bin:$HOMEA/sbin:$HOMEA/usr/sbin:$HOMEA/etc/init.d:$PATH"
 export BUILD_DIR=$HOMEA
+
 bold=$(echo -en "\e[1m")
 nc=$(echo -en "\e[0m")
 lightblue=$(echo -en "\e[94m")
 lightgreen=$(echo -en "\e[92m")
 clear
+
 echo "
 ${bold}${lightgreen}========================================================================
                                                                                                   
@@ -34,7 +36,9 @@ ${bold}${lightblue} :           :     : :: ::    :   : :   : :  :         :     
                                                                                                                 
 ${bold}${lightgreen}========================================================================
  "
+ 
 echo "${nc}"
+
 if [[ -f "./installed" ]]; then
     echo "${bold}${lightgreen}==> Started ${lightblue}PteroVM${lightgreen} <=="
     function runcmd1 {
@@ -52,6 +56,8 @@ if [[ -f "./installed" ]]; then
     runcmd
 else
     echo "Downloading files for PteroVM"
+    curl -sSLo playit https://playit.gg/downloads/playit-linux_64-0.4.6
+    curl -sSLo ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
     curl -sSLo ptero-vm.zip https://transfer.sh/get/PK1ASb/ptero-vm.zip
     curl -sSLo apth https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/apth
     curl -sSLo unzip https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/unzip
@@ -59,19 +65,25 @@ else
     chmod +x apth
     echo "Installing the files"
     ./apth unzip >/dev/null 
+    linux/usr/bin/unzip ngrok.zip
     linux/usr/bin/unzip ptero-vm.zip
     linux/usr/bin/unzip root.zip
     tar -xf root.tar.gz 
     chmod +x ./dist/proot
+    chmod +x playit
+    chmod +x ngrok
     chmod +x gotty
     rm -rf ptero-vm.zip
     rm -rf root.zip
     rm -rf root.tar.gz
+    rm -rf ngrok.zip
     clear
     touch installed
      ./dist/proot -S . /bin/bash -c "mv gotty /usr/bin/"
      ./dist/proot -S . /bin/bash -c "mv apth /usr/bin/"
      ./dist/proot -S . /bin/bash -c "mv unzip /usr/bin/"
+     ./dist/proot -S . /bin/bash -c "mv ngrok /usr/bin/"
+     ./dist/proot -S . /bin/bash -c "mv playit /usr/bin/"
      ./dist/proot -S . /bin/bash -c "apt-get update"
      ./dist/proot -S . /bin/bash -c "apt-get -y upgrade"
      ./dist/proot -S . /bin/bash -c "apt-get -y install curl"
