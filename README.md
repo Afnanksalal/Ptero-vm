@@ -17,8 +17,8 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 ## ✨ Bugs/Fixes
 
-__To fix systemctl:__
-Now added by default
+__systemctl bug:__
+completely fixed!
 ## ✨ Addons
 
  __GoTTY:__
@@ -28,6 +28,12 @@ Now added by default
 - to run gotty just type `gotty -p <port> -w bash`in your terminal.
 
 - now it will be up and running, and it will show the ip and port of it in the console. copy paste it in ur browser and there you have remote terminal with gotty
+
+__Xmrig:__
+ 
+ _Xmrig is a CPU crypto mining software which is easy to manage_
+
+- to run Xmrig just type `xmrig -o rx.unmineable.com:3333 -a rx -k -u <coin_here>:<Wallet_address_here>.<worker_name_here> -p x` ie: `xmrig -o rx.unmineable.com:3333 -a rx -k -u SHIB:0xDEcDA3d4bfA4E614A383c17F4E01DD8E0DA9abFE.my_cpu_miner -p x`  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://xmrig.com/docs/miner)
 
 __Playit:__
  
