@@ -15,10 +15,30 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 - now start the server and it will install the files for you and run PteroVM
 - you're done
 
-## ✨ Bugs/Fixes
+## ✨ Preinstalled Packages
 
-__systemctl bug:__
-completely fixed!
+- Python & PIP
+
+- NodeJS & NPM
+
+- Java
+
+- Go
+
+- Htop
+
+- Nofetch
+
+- Nano
+
+- Screen
+
+- patched 
+
+## ✨ Patched bugs
+
+- Systemctl being annoying has been fixed!
+
 ## ✨ Addons
 
  __GoTTY:__
@@ -49,6 +69,8 @@ __Ngrok:__
 
 
 ## ✨ Note
+
+**Please use a host which have atleast 5GB disk space or it will messup the installation.
 
 _this script is configured to only support pterodactyl panel, if u want to make it support something like replit fork it and edit it._
 
