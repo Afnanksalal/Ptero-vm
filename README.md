@@ -76,7 +76,7 @@ __Ngrok:__
 
 ## ✨ Note
 
-**Please use a host which have atleast 5GB disk space or it will messup the installation.**
+**Please use a host which have atleast 3GB disk space or it will messup the installation.**
 
 _this script is configured to only support pterodactyl panel, if u want to make it support something like replit fork it and edit it._
 
