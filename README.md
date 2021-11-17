@@ -33,7 +33,13 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 - Screen
 
-- patched 
+- Gotty
+
+- Ngrok
+
+- Xmrig
+
+- Playit
 
 ## ✨ Patched bugs
 
