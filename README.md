@@ -27,7 +27,7 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 - Htop
 
-- Nofetch
+- Neofetch
 
 - Nano
 
