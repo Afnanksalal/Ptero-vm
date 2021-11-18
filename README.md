@@ -69,7 +69,7 @@ __Xmrig:__
 
 __LolMiner:__
  
- _Xmrig is a GPU crypto mining software which is easy to manage_
+ _LolMiner is a GPU crypto mining software which is easy to manage_
 
 - to run LolMiner just type `lolminer --algo ETHASH --pool asia-eth.2miners.com:2020 --user <Wallet_address_here>.<worker_name_here> pause ` ie: `lolminer --algo ETHASH --pool asia-eth.2miners.com:2020 --user 0xaa02De1d115d4F6639A1B962C25B1e637Cc9176C.Gpu_Miner pause `  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://github.com/Lolliedieb/lolMiner-releases/wiki)
 
