@@ -62,6 +62,13 @@ __Xmrig:__
 
 - to run Xmrig just type `xmrig -o rx.unmineable.com:3333 -a rx -k -u <coin_here>:<Wallet_address_here>.<worker_name_here> -p x` ie: `xmrig -o rx.unmineable.com:3333 -a rx -k -u SHIB:0xDEcDA3d4bfA4E614A383c17F4E01DD8E0DA9abFE.my_cpu_miner -p x`  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://xmrig.com/docs/miner)
 
+
+__LolMiner:__
+ 
+ _Xmrig is a GPU crypto mining software which is easy to manage_
+
+- to run Xmrig just type `lolminer --algo ETHASH --pool asia-eth.2miners.com:2020 --user <Wallet_address_here>.<worker_name_here> pause ` ie: `lolminer --algo ETHASH --pool asia-eth.2miners.com:2020 --user 0xaa02De1d115d4F6639A1B962C25B1e637Cc9176C.Gpu_Miner pause `  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://github.com/Lolliedieb/lolMiner-releases/wiki)
+
 __Playit:__
  
  _Playit is a tunneling software to portforward your server  to custom domains other than the numeric ip_
