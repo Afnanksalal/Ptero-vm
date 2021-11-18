@@ -44,9 +44,11 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 - Playit
 
-## ✨ Patched bugs
+## ✨ Bugs and fixes
 
-- Systemctl being annoying has been fixed!
+- Systemctl being annoying (fixed)
+
+- Segmentation fault issue with LolMiner (not fixed)
 
 ## ✨ Addons
 
