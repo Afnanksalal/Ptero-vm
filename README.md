@@ -9,9 +9,9 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 ## 💁‍♀️ How to use
 
-- first make a server (js/py server)
-- then Grab the `installer.py` or `installer.js` file
-- then go to startup section of the server and name it `installer.py` (if u made python server and downloaded the installer.py file) or `installer.js` (if u made js server and downloaded the installer.js file)
+- first make a server (js/py/java server)
+- then Grab the `server.py`, `server.jar` or `server.js` file
+- then go to startup section of the server and name it `server.py` (if u made python server and downloaded the server.py file) or `server.js` (if u made js server and downloaded the server.js file)  `server.jar` (if u made java server and downloaded the server.jar file)
 - now start the server and it will install the files for you and run PteroVM
 - you're done
 
@@ -73,6 +73,15 @@ __Ngrok:__
 
 - to run ngrok just type `ngrok http <port>` or `ngrok tcp <port>`ie: `ngork tcp 22`  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://ngrok.com/docs)
 
+## ✨ Credits
+
+- Triassic - For making PteroVM JAR
+
+- Chirag - For helping me rewrite PteroVM
+
+- Io.Netty - For giving me the idea to make PteroVM
+
+- Me - For making PteroVM lol!
 
 ## ✨ Note
 
