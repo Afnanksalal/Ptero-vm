@@ -10,7 +10,7 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 ## 💁‍♀️ How to use
 
 - first make a server (js/py/java server)
-- then download the `server.py`, [`server.jar`](https://github.com/RealTriassic/Ptero-VM-JAR/releases/download/latest/server.jar) or `server.js` file and the `installer.sh`
+- then download the [`server.py`](https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/server.py), [`server.jar`](https://github.com/RealTriassic/Ptero-VM-JAR/releases/download/latest/server.jar) or [`server.js`](https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/server.js) file and the [`installer.sh`](https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/installer.sh)
 - then upload the files to your server via file manager or sftp
 - then go to startup section of the server and name it `server.py` (if u made python server and downloaded the server.py file) or `server.js` (if u made js server and downloaded the server.js file)  `server.jar` (if u made java server and downloaded the server.jar file)
 - now start the server and it will install the files for you and run PteroVM
@@ -42,7 +42,7 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 - LolMiner
 
-- Playit
+- PlayIT
 
 ## ✨ Bugs and fixes
 
@@ -83,7 +83,7 @@ __Ngrok:__
  
  _Ngrok is a tunneling software to portforward your server  to custom domains other than the numeric ip_
 
-- to run ngrok just type `ngrok http <port>` or `ngrok tcp <port>`ie: `ngork tcp 22`  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://ngrok.com/docs)
+- to run ngrok just type `ngrok http <port>` or `ngrok tcp <port>` ie: `ngork tcp 22`  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://ngrok.com/docs)
 
 ## ✨ Credits
 
@@ -98,10 +98,6 @@ __Ngrok:__
 ## ✨ Note
 
 **Please use a host which have atleast 3GB disk space or it will messup the installation.**
-
-_this script is configured to only support pterodactyl panel, if u want to make it support something like replit fork it and edit it._
-
-**This script is for educational purposes, we are not responsible for anything that happens.**
 
 ## Disclaimer
 
