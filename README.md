@@ -40,6 +40,8 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 - Xmrig
 
+- LolMiner
+
 - Playit
 
 ## ✨ Patched bugs
