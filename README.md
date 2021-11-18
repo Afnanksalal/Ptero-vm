@@ -102,3 +102,8 @@ __Ngrok:__
 _this script is configured to only support pterodactyl panel, if u want to make it support something like replit fork it and edit it._
 
 **This script is for educational purposes, we are not responsible for anything that happens.**
+
+## Disclaimer
+
+This script is made for educational purposes (obviously lol)  
+We are NOT responsible for any consequences.
