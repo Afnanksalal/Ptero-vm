@@ -10,7 +10,7 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 ## 💁‍♀️ How to use
 
 - first make a server (js/py/java server)
-- then download the `server.py`, `server.jar` or `server.js` file and the `installer.sh`
+- then download the `server.py`, [`server.jar`](https://github.com/RealTriassic/Ptero-VM-JAR/releases/download/latest/server.jar) or `server.js` file and the `installer.sh`
 - then upload the files to your server via file manager or sftp
 - then go to startup section of the server and name it `server.py` (if u made python server and downloaded the server.py file) or `server.js` (if u made js server and downloaded the server.js file)  `server.jar` (if u made java server and downloaded the server.jar file)
 - now start the server and it will install the files for you and run PteroVM
