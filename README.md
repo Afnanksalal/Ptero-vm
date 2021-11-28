@@ -44,6 +44,8 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 - PlayIT
 
+- Lavalink
+
 ## ✨ Bugs and fixes
 
 - Systemctl being annoying (fixed)
@@ -84,6 +86,12 @@ __Ngrok:__
  _Ngrok is a tunneling software to portforward your server  to custom domains other than the numeric ip_
 
 - to run ngrok just type `ngrok http <port>` or `ngrok tcp <port>` ie: `ngork tcp 22`  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://ngrok.com/docs)
+
+__Lavalink:__
+ 
+ _Lavalink is a standalone program, written in Java. It's a lightweight solution for playing music from sources such as YouTube or Soundcloud_
+
+- to run Lavalink type `java -jar Lavalink.jar`. the default port to connect will be `443` and default pass will be `lavalinkpass`. you can edit it by editing the `application.yml` file
 
 ## ✨ Credits
 
