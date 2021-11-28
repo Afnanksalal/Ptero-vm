@@ -91,7 +91,7 @@ __Lavalink:__
  
  _Lavalink is a standalone program, written in Java. It's a lightweight solution for playing music from sources such as YouTube or Soundcloud_
 
-- to run Lavalink type `java -jar Lavalink.jar`. the default port to connect will be `443` and default pass will be `lavalinkpass`. you can edit it by editing the `application.yml` file
+- to run Lavalink type `java -jar Lavalink.jar`. note: you need to edit the `YOUR_PORT` and `YOUR_PASS` in the `application.yml` file to make the jar work properly
 
 ## ✨ Credits
 
