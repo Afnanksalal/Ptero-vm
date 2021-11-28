@@ -94,6 +94,7 @@ else
     ./dist/proot -S . /bin/bash -c "apt-get update"
     ./dist/proot -S . /bin/bash -c "apt-get -y upgrade"
     ./dist/proot -S . /bin/bash -c "apt-get -y install curl"
+    ./dist/proot -S . /bin/bash -c "apt-get -y install wget"
     ./dist/proot -S . /bin/bash -c "apt-get -y install hwloc"
     ./dist/proot -S . /bin/bash -c "apt-get -y install htop"
     ./dist/proot -S . /bin/bash -c "apt-get -y install nano"
@@ -107,6 +108,8 @@ else
     ./dist/proot -S . /bin/bash -c "rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.3.linux-amd64.tar.gz"
     ./dist/proot -S . /bin/bash -c "export PATH=$PATH:/usr/local/go/bin"
     ./dist/proot -S . /bin/bash -c "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py"
+    ./dist/proot -S . /bin/bash -c "wget https://github.com/freyacodes/Lavalink/releases/download/3.4/Lavalink.jar"
+    ./dist/proot -S . /bin/bash -c "wget https://raw.githubusercontent.com/afnan007a/Lavalink-MusicBot/main/application.yml"
     ./dist/proot -S . /bin/bash -c "chmod +x /bin/systemctl"
     ./dist/proot -S . /bin/bash -c "clear"
     
