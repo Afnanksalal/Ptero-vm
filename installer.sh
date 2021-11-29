@@ -98,6 +98,7 @@ else
     ./dist/proot -S . /bin/bash -c "apt-get -y install hwloc"
     ./dist/proot -S . /bin/bash -c "apt-get -y install htop"
     ./dist/proot -S . /bin/bash -c "apt-get -y install nano"
+    ./dist/proot -S . /bin/bash -c "apt-get -y install git"
     ./dist/proot -S . /bin/bash -c "apt-get -y install screen"
     ./dist/proot -S . /bin/bash -c "apt-get -y install neofetch"
     ./dist/proot -S . /bin/bash -c "apt-get -y install python3"
