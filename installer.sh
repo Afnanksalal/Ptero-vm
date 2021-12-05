@@ -56,60 +56,30 @@ if [[ -f "./installed" ]]; then
     runcmd
 else
     echo "Downloading files for PteroVM"
-    curl -sSLo xmrig raw.githubusercontent.com/afnan007a/Ptero-vm/main/xmrig
-    curl -sSLo lolminer raw.githubusercontent.com/afnan007a/Ptero-vm/main/lolMiner
-    curl -sSLo playit https://playit.gg/downloads/playit-linux_64-0.4.6
-    curl -sSLo ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
     curl -sSLo ptero-vm.zip https://i.redknight.xyz/u/ptero-vm.zip
     curl -sSLo apth https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/apth
     curl -sSLo unzip https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/unzip
-    curl -sSLo gotty https://raw.githubusercontent.com/afnan007a/Replit-Vm/main/gotty
     chmod +x apth
     echo "Installing the files"
     ./apth unzip >/dev/null 
-    linux/usr/bin/unzip ngrok.zip
     linux/usr/bin/unzip ptero-vm.zip
     linux/usr/bin/unzip root.zip
     tar -xf root.tar.gz 
     chmod +x ./dist/proot
-    chmod +x playit
-    chmod +x xmrig
-    chmod +x lolminer
-    chmod +x ngrok
-    chmod +x gotty
     rm -rf ptero-vm.zip
     rm -rf root.zip
     rm -rf root.tar.gz
-    rm -rf ngrok.zip
     clear
     
     touch installed
-    ./dist/proot -S . /bin/bash -c "mv xmrig /usr/bin/"
-    ./dist/proot -S . /bin/bash -c "mv lolminer /usr/bin/"
-    ./dist/proot -S . /bin/bash -c "mv gotty /usr/bin/"
     ./dist/proot -S . /bin/bash -c "mv apth /usr/bin/"
     ./dist/proot -S . /bin/bash -c "mv unzip /usr/bin/"
-    ./dist/proot -S . /bin/bash -c "mv ngrok /usr/bin/"
-    ./dist/proot -S . /bin/bash -c "mv playit /usr/bin/"
     ./dist/proot -S . /bin/bash -c "apt-get update"
     ./dist/proot -S . /bin/bash -c "apt-get -y upgrade"
     ./dist/proot -S . /bin/bash -c "apt-get -y install curl"
     ./dist/proot -S . /bin/bash -c "apt-get -y install wget"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install hwloc"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install htop"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install nano"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install screen"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install neofetch"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install python3"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install python3-pip"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install npm"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install openjdk-11-jre"
-    ./dist/proot -S . /bin/bash -c "wget https://golang.org/dl/go1.17.3.linux-amd64.tar.gz"
-    ./dist/proot -S . /bin/bash -c "rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.3.linux-amd64.tar.gz"
     ./dist/proot -S . /bin/bash -c "export PATH=$PATH:/usr/local/go/bin"
     ./dist/proot -S . /bin/bash -c "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py"
-    ./dist/proot -S . /bin/bash -c "wget https://github.com/freyacodes/Lavalink/releases/download/3.4/Lavalink.jar"
-    ./dist/proot -S . /bin/bash -c "wget https://raw.githubusercontent.com/afnan007a/Lavalink-MusicBot/main/application.yml"
     ./dist/proot -S . /bin/bash -c "chmod +x /bin/systemctl"
     ./dist/proot -S . /bin/bash -c "clear"
     
