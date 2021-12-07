@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "This script uses Apth by nopirateonlysteam#9956"?
 HOME="/home/container"
 HOMEA="$HOME/linux/.apt"
 STAR1="$HOMEA/lib:$HOMEA/usr/lib:$HOMEA/var/lib:$HOMEA/usr/lib/x86_64-linux-gnu:$HOMEA/lib/x86_64-linux-gnu:$HOMEA/lib:$HOMEA/usr/lib/sudo"
@@ -18,6 +17,9 @@ bold=$(echo -en "\e[1m")
 nc=$(echo -en "\e[0m")
 lightblue=$(echo -en "\e[94m")
 lightgreen=$(echo -en "\e[92m")
+clear
+
+echo "${bold}${lightgreen}This script uses Apth to install the required packages and Apth is made by nopirateonlysteam#9956"
 clear
 
 echo "
