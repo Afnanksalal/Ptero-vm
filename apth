@@ -1,5 +1,6 @@
 #!/bin/bash
 # bin/compile <build-dir> <cache-dir>
+echo "Apth by nopirateonlysteam#9956"?
 HOMEA=$HOME/linux
 echo 'APTH - Application power tool HermiTech 4.1'
 echo 'This tool will install apps without root'
