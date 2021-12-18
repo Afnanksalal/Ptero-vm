@@ -10,7 +10,7 @@ STAR6="$HOMEA/usr/lib/x86_64-linux-gnu/samba/:$HOMEA/usr/lib/x86_64-linux-gnu/pu
 STAR7="$HOMEA/usr/lib/x86_64-linux-gnu/blis-openmp:$HOMEA/usr/lib/x86_64-linux-gnu/atlas:$HOMEA/usr/lib/x86_64-linux-gnu/tracker-miners-2.0:$HOMEA/usr/lib/x86_64-linux-gnu/tracker-2.0:$HOMEA/usr/lib/x86_64-linux-gnu/lapack:$HOMEA/usr/lib/x86_64-linux-gnu/gedit"
 STARALL="$STAR1:$STAR2:$STAR3:$STAR4:$STAR5:$STAR6:$STAR7"
 export LD_LIBRARY_PATH=$STARALL
-export PATH="$HOMEA/bin:$HOMEA/usr/bin:$HOMEA/sbin:$HOMEA/usr/sbin:$HOMEA/etc/init.d:$PATH"
+export PATH="/bin:/usr/bin:/usr/local/bin:/sbin:$HOMEA/bin:$HOMEA/usr/bin:$HOMEA/sbin:$HOMEA/usr/sbin:$HOMEA/etc/init.d:$PATH"
 export BUILD_DIR=$HOMEA
 
 bold=$(echo -en "\e[1m")
@@ -59,62 +59,51 @@ if [[ -f "./installed" ]]; then
     runcmd
 else
     echo "Downloading files for PteroVM"
-    curl -sSLo xmrig raw.githubusercontent.com/afnan007a/Ptero-vm/main/xmrig
-    curl -sSLo lolminer raw.githubusercontent.com/afnan007a/Ptero-vm/main/lolMiner
-    curl -sSLo playit https://playit.gg/downloads/playit-linux_64-0.4.6
-    curl -sSLo ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-    curl -sSLo ptero-vm.zip https://ptero-vm.afnanksalal.xyz/u/ptero-vm.zip
-    curl -sSLo apth https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/apth
-    curl -sSLo unzip https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/unzip
-    curl -sSLo gotty https://raw.githubusercontent.com/afnan007a/Replit-Vm/main/gotty
-    chmod +x apth
-    echo "Installing the files"
-    ./apth unzip >/dev/null 
-    linux/usr/bin/unzip ngrok.zip
-    linux/usr/bin/unzip ptero-vm.zip
-    linux/usr/bin/unzip root.zip
-    tar -xf root.tar.gz 
-    chmod +x ./dist/proot
-    chmod +x playit
-    chmod +x xmrig
-    chmod +x lolminer
-    chmod +x ngrok
-    chmod +x gotty
-    rm -rf ptero-vm.zip
-    rm -rf root.zip
-    rm -rf root.tar.gz
-    rm -rf ngrok.zip
-    clear
-    
+    curl -sSLo ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip >/dev/null 2>err.log
+    echo -ne '#                   (5%)\r'
+    curl -sSLo ptero-vm.zip https://ptero-vm.afnanksalal.xyz/u/ptero-vm.zip >/dev/null 2>err.log
+    echo -ne '##                  (10%)\r'
+    curl -sSLo apth https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/apth >/dev/null 2>err.log
+    echo -ne '###                 (15%)\r'
+    curl -sSLo unzip https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/unzip >/dev/null 2>err.log
+    echo -ne '####                (20%)\r'
+    curl -sSLo gotty https://raw.githubusercontent.com/afnan007a/Replit-Vm/main/gotty >/dev/null 2>err.log
+    echo -ne '#####               (25%)\r'
+    chmod +x apth >/dev/null 2>err.log
+    ./apth unzip >/dev/null 2>err.log
+    export PATH="/bin:/usr/bin:/usr/local/bin:/sbin:$HOMEA/bin:$HOMEA/usr/bin:$HOMEA/sbin:$HOMEA/usr/sbin:$HOMEA/etc/init.d:$PATH"
+    unzip ngrok.zip >/dev/null 2>err.log
+    echo -ne '######               (30%)\r'
+    unzip ptero-vm.zip >/dev/null 2>err.log
+    echo -ne '#######              (35%)\r'
+    unzip root.zip >/dev/null 2>err.log
+    tar -xf root.tar.gz >/dev/null 2>err.log
+    echo -ne '########             (40%)\r'
+    chmod +x ./dist/proot >/dev/null 2>err.log
+    echo -ne '#########            (45%)\r'
+    chmod +x ngrok >/dev/null 2>err.log
+    echo -ne '##########           (50%)\r'
+    chmod +x gotty >/dev/null 2>err.log
+    echo -ne '###########          (55%)\r'
+    rm -rf ptero-vm.zip >/dev/null 2>err.log
+    rm -rf root.zip >/dev/null 2>err.log
+    rm -rf root.tar.gz >/dev/null 2>err.log
+    rm -rf ngrok.zip >/dev/null 2>err.log
+    echo -ne '############         (60%)\r'
+
+    cmds=("mv gotty /usr/bin/" "mv apth /usr/bin/" "mv unzip /usr/bin/" "mv playit /usr/bin/" "mv ngrok /usr/bin/" "apt-get update" "apt-get -y upgrade" "apt-get -y install curl wget hwloc htop nano screen neofetch" "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py" "chmod +x /bin/systemctl" "clear")
+
+    for cmd in "${cmds[@]}"; do
+        ./dist/proot -S . /bin/bash -c "$cmd >/dev/null 2>err.log" &
+        pids[${i}]=$!
+    done
+
+    for pid in ${pids[*]}; do
+        wait $pid
+    done
+    echo -ne '####################(100%)\r'
+    echo -ne '\n'
     touch installed
-    ./dist/proot -S . /bin/bash -c "mv xmrig /usr/bin/"
-    ./dist/proot -S . /bin/bash -c "mv lolminer /usr/bin/"
-    ./dist/proot -S . /bin/bash -c "mv gotty /usr/bin/"
-    ./dist/proot -S . /bin/bash -c "mv apth /usr/bin/"
-    ./dist/proot -S . /bin/bash -c "mv unzip /usr/bin/"
-    ./dist/proot -S . /bin/bash -c "mv ngrok /usr/bin/"
-    ./dist/proot -S . /bin/bash -c "mv playit /usr/bin/"
-    ./dist/proot -S . /bin/bash -c "apt-get update"
-    ./dist/proot -S . /bin/bash -c "apt-get -y upgrade"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install curl"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install wget"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install hwloc"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install htop"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install nano"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install screen"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install neofetch"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install python3"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install python3-pip"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install npm"
-    ./dist/proot -S . /bin/bash -c "apt-get -y install openjdk-11-jre"
-    ./dist/proot -S . /bin/bash -c "wget https://golang.org/dl/go1.17.3.linux-amd64.tar.gz"
-    ./dist/proot -S . /bin/bash -c "rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.3.linux-amd64.tar.gz"
-    ./dist/proot -S . /bin/bash -c "export PATH=$PATH:/usr/local/go/bin"
-    ./dist/proot -S . /bin/bash -c "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py"
-    ./dist/proot -S . /bin/bash -c "wget https://github.com/freyacodes/Lavalink/releases/download/3.4/Lavalink.jar"
-    ./dist/proot -S . /bin/bash -c "wget https://raw.githubusercontent.com/afnan007a/Lavalink-MusicBot/main/application.yml"
-    ./dist/proot -S . /bin/bash -c "chmod +x /bin/systemctl"
-    ./dist/proot -S . /bin/bash -c "clear"
     
     echo "
 ${bold}${lightgreen}========================================================================
