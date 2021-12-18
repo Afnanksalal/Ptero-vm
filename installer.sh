@@ -94,12 +94,7 @@ else
     cmds=("mv gotty /usr/bin/" "mv apth /usr/bin/" "mv unzip /usr/bin/" "mv playit /usr/bin/" "mv ngrok /usr/bin/" "apt-get update" "apt-get -y upgrade" "apt-get -y install curl wget hwloc htop nano screen neofetch" "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py" "chmod +x /bin/systemctl" "clear")
 
     for cmd in "${cmds[@]}"; do
-        ./dist/proot -S . /bin/bash -c "$cmd >/dev/null 2>err.log" &
-        pids[${i}]=$!
-    done
-
-    for pid in ${pids[*]}; do
-        wait $pid
+        ./dist/proot -S . /bin/bash -c "$cmd >/dev/null 2>err.log"
     done
     echo -ne '####################(100%)\r'
     echo -ne '\n'
