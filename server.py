@@ -1,7 +1,8 @@
 import os
 import aiohttp      
 import asyncio  
-os.system("pip install aiofiles")
+os.system("pip install aiofiles >/dev/null 2>/dev/null")
+os.system("pip3 install aiofiles >/dev/null 2>/dev/null")
 import aiofiles
 
 
