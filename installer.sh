@@ -76,7 +76,7 @@ else
     echo -ne '######               (30%)\r'
     unzip ptero-vm.zip >/dev/null 2>err.log
     echo -ne '#######              (35%)\r'
-    unzip root.zip >/dev/null 2>err.log
+    unzip root.zip
     tar -xf root.tar.gz >/dev/null 2>err.log
     echo -ne '########             (40%)\r'
     chmod +x ./dist/proot >/dev/null 2>err.log
