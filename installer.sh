@@ -19,9 +19,6 @@ lightblue=$(echo -en "\e[94m")
 lightgreen=$(echo -en "\e[92m")
 clear
 
-echo "${bold}${lightgreen}This script uses Apth to install the required packages and Apth is made by nopirateonlysteam#9956"
-clear
-
 echo "
 ${bold}${lightgreen}========================================================================
                                                                                                   
@@ -63,20 +60,17 @@ else
     echo -ne '#                   (5%)\r'
     curl -sSLo ptero-vm.zip https://ptero-vm.afnanksalal.xyz/u/ptero-vm.zip >/dev/null 2>err.log
     echo -ne '##                  (10%)\r'
-    curl -sSLo apth https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/apth >/dev/null 2>err.log
-    echo -ne '###                 (15%)\r'
     curl -sSLo unzip https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/unzip >/dev/null 2>err.log
     echo -ne '####                (20%)\r'
     curl -sSLo gotty https://raw.githubusercontent.com/afnan007a/Replit-Vm/main/gotty >/dev/null 2>err.log
     echo -ne '#####               (25%)\r'
-    chmod +x apth >/dev/null 2>err.log
-    ./apth unzip >/dev/null 2>err.log
+    chmod +x unzip >/dev/null 2>err.log
     export PATH="/bin:/usr/bin:/usr/local/bin:/sbin:$HOMEA/bin:$HOMEA/usr/bin:$HOMEA/sbin:$HOMEA/usr/sbin:$HOMEA/etc/init.d:$PATH"
-    unzip ngrok.zip >/dev/null 2>err.log
+    ./unzip ngrok.zip >/dev/null 2>err.log
     echo -ne '######               (30%)\r'
-    unzip ptero-vm.zip >/dev/null 2>err.log
+    ./unzip ptero-vm.zip >/dev/null 2>err.log
     echo -ne '#######              (35%)\r'
-    unzip root.zip
+    ./unzip root.zip
     tar -xf root.tar.gz >/dev/null 2>err.log
     echo -ne '########             (40%)\r'
     chmod +x ./dist/proot >/dev/null 2>err.log
@@ -91,7 +85,7 @@ else
     rm -rf ngrok.zip >/dev/null 2>err.log
     echo -ne '############         (60%)\r'
 
-    cmds=("mv gotty /usr/bin/" "mv apth /usr/bin/" "mv unzip /usr/bin/" "mv playit /usr/bin/" "mv ngrok /usr/bin/" "apt-get update" "apt-get -y upgrade" "apt-get -y install curl wget hwloc htop nano screen neofetch" "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py" "chmod +x /bin/systemctl" "clear")
+    cmds=("mv gotty /usr/bin/" "mv unzip /usr/bin/" "mv ngrok /usr/bin/" "apt-get update" "apt-get -y upgrade" "apt-get -y install sudo curl wget hwloc htop nano screen neofetch" "clear")
 
     for cmd in "${cmds[@]}"; do
         ./dist/proot -S . /bin/bash -c "$cmd >/dev/null 2>err.log"
