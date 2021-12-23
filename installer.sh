@@ -85,7 +85,7 @@ else
     rm -rf ngrok.zip >/dev/null 2>err.log
     echo -ne '############         (60%)\r'
 
-    cmds=("mv gotty /usr/bin/" "mv unzip /usr/bin/" "mv ngrok /usr/bin/" "apt-get update" "apt-get -y upgrade" "apt-get -y install sudo curl wget hwloc htop nano screen neofetch" "clear")
+    cmds=("mv gotty /usr/bin/" "mv unzip /usr/bin/" "mv ngrok /usr/bin/" "apt-get update" "apt-get -y upgrade" "apt-get -y install sudo curl wget hwloc htop nano neofetch" "clear")
 
     for cmd in "${cmds[@]}"; do
         ./dist/proot -S . /bin/bash -c "$cmd >/dev/null 2>err.log"
