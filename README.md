@@ -24,15 +24,10 @@ Root-Instance inside of pterodactyl's docker container with Proot.
 
 - Nano
 
-- Screen
-
 - Gotty
 
 - Ngrok
 
-## ✨ Bugs and fixes
-
-- Systemctl being annoying (fixed)
 
 ## ✨ Addons
 
