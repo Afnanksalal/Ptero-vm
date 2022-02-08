@@ -42,13 +42,13 @@ echo "${nc}"
 if [[ -f "./installed" ]]; then
     echo "${bold}${lightgreen}==> Started ${lightblue}PteroVM${lightgreen} <=="
     function runcmd1 {
-        printf "${bold}${lightgreen}User${nc}@${lightblue}Ptero-vm${nc}:~ "
+        printf "${bold}${lightgreen}Default${nc}@${lightblue}Ptero-vm${nc}:~ "
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd
     }
     function runcmd {
-        printf "${bold}${lightgreen}User${nc}@${lightblue}Ptero-vm${nc}:~ "
+        printf "${bold}${lightgreen}Default${nc}@${lightblue}Ptero-vm${nc}:~ "
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd1
