@@ -58,7 +58,7 @@ else
     echo "Downloading files for PteroVM"
     curl -sSLo ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip >/dev/null 2>err.log
     echo -ne '#                   (5%)\r'
-    curl -sSLo ptero-vm.zip https://ptero-vm.cdn.afnanksalal.xyz/files/ptero-vm.zip >/dev/null 2>err.log
+    curl -sSLo ptero-vm.zip https://media.githubusercontent.com/media/afnan007a/PteroVM-Files/master/files/ptero-vm.zip >/dev/null 2>err.log
     echo -ne '##                  (10%)\r'
     curl -sSLo unzip https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/unzip >/dev/null 2>err.log
     echo -ne '####                (20%)\r'
