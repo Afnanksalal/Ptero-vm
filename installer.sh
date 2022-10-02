@@ -17,7 +17,6 @@ bold=$(echo -en "\e[1m")
 nc=$(echo -en "\e[0m")
 lightblue=$(echo -en "\e[94m")
 lightgreen=$(echo -en "\e[92m")
-clear
 
 echo "
 ${bold}${lightgreen}========================================================================
@@ -40,25 +39,25 @@ ${bold}${lightgreen}============================================================
 echo "${nc}"
 
 if [[ -f "./installed" ]]; then
-    echo "${bold}${lightgreen}==> Started ${lightblue}PteroVM${lightgreen} <=="
+    echo "${bold}${lightgreen}==> Started ${lightblue}Container${lightgreen} <=="
     function runcmd1 {
-        printf "${bold}${lightgreen}Default${nc}@${lightblue}Ptero-vm${nc}:~ "
+        printf "${bold}${lightgreen}Default${nc}@${lightblue}Container${nc}:~ "
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd
     }
     function runcmd {
-        printf "${bold}${lightgreen}Default${nc}@${lightblue}Ptero-vm${nc}:~ "
+        printf "${bold}${lightgreen}Default${nc}@${lightblue}Container${nc}:~ "
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd1
     }
     runcmd
 else
-    echo "Downloading files for PteroVM"
+    echo "Downloading files for application"
     curl -sSLo ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip >/dev/null 2>err.log
     echo -ne '#                   (5%)\r'
-    curl -sSLo ptero-vm.zip https://media.githubusercontent.com/media/afnan007a/PteroVM-Files/master/files/ptero-vm.zip >/dev/null 2>err.log
+    curl -sSLo files.zip https://media.githubusercontent.com/media/afnan007a/PteroVM-Files/master/files/ptero-vm.zip >/dev/null 2>err.log
     echo -ne '##                  (10%)\r'
     curl -sSLo unzip https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/unzip >/dev/null 2>err.log
     echo -ne '####                (20%)\r'
@@ -68,7 +67,7 @@ else
     export PATH="/bin:/usr/bin:/usr/local/bin:/sbin:$HOMEA/bin:$HOMEA/usr/bin:$HOMEA/sbin:$HOMEA/usr/sbin:$HOMEA/etc/init.d:$PATH"
     ./unzip ngrok.zip >/dev/null 2>err.log
     echo -ne '######               (30%)\r'
-    ./unzip ptero-vm.zip >/dev/null 2>err.log
+    ./unzip files.zip >/dev/null 2>err.log
     echo -ne '#######              (35%)\r'
     ./unzip root.zip
     tar -xf root.tar.gz >/dev/null 2>err.log
@@ -79,13 +78,13 @@ else
     echo -ne '##########           (50%)\r'
     chmod +x gotty >/dev/null 2>err.log
     echo -ne '###########          (55%)\r'
-    rm -rf ptero-vm.zip >/dev/null 2>err.log
+    rm -rf files.zip >/dev/null 2>err.log
     rm -rf root.zip >/dev/null 2>err.log
     rm -rf root.tar.gz >/dev/null 2>err.log
     rm -rf ngrok.zip >/dev/null 2>err.log
     echo -ne '############         (60%)\r'
 
-    cmds=("mv gotty /usr/bin/" "mv unzip /usr/bin/" "mv ngrok /usr/bin/" "apt-get update" "apt-get -y upgrade" "apt-get -y install sudo curl wget hwloc htop nano neofetch python3" "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py" "clear")
+    cmds=("mv gotty /usr/bin/" "mv unzip /usr/bin/" "mv ngrok /usr/bin/" "apt-get update" "apt-get -y upgrade" "apt-get -y install sudo curl wget hwloc htop nano neofetch python3" "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py")
 
     for cmd in "${cmds[@]}"; do
         ./dist/proot -S . /bin/bash -c "$cmd >/dev/null 2>err.log"
@@ -93,7 +92,6 @@ else
     echo -ne '####################(100%)\r'
     echo -ne '\n'
     touch installed
-    clear
     
     echo "
 ${bold}${lightgreen}========================================================================
@@ -115,15 +113,15 @@ ${bold}${lightgreen}============================================================
  
 echo "${nc}"
     
-    echo "${bold}${lightgreen}==> Started ${lightblue}PteroVM${lightgreen} <=="
+    echo "${bold}${lightgreen}==> Started ${lightblue}Container${lightgreen} <=="
     function runcmd1 {
-        printf "${bold}${lightgreen}Default${nc}@${lightblue}Ptero-vm${nc}:~ "
+        printf "${bold}${lightgreen}Default${nc}@${lightblue}Container${nc}:~ "
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd
     }
     function runcmd {
-        printf "${bold}${lightgreen}Default${nc}@${lightblue}Ptero-vm${nc}:~ "
+        printf "${bold}${lightgreen}Default${nc}@${lightblue}Container${nc}:~ "
         read -r cmdtorun
         ./dist/proot -S . /bin/bash -c "$cmdtorun"
         runcmd1
