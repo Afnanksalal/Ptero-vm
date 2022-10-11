@@ -43,13 +43,13 @@ if [[ -f "./installed" ]]; then
     function runcmd1 {
         printf "${bold}${lightgreen}Default${nc}@${lightblue}Container${nc}:~ "
         read -r cmdtorun
-        ./dist/proot -S . /bin/bash -c "$cmdtorun"
+        ./libraries/proot -S . /bin/bash -c "$cmdtorun"
         runcmd
     }
     function runcmd {
         printf "${bold}${lightgreen}Default${nc}@${lightblue}Container${nc}:~ "
         read -r cmdtorun
-        ./dist/proot -S . /bin/bash -c "$cmdtorun"
+        ./libraries/proot -S . /bin/bash -c "$cmdtorun"
         runcmd1
     }
     runcmd
@@ -72,7 +72,7 @@ else
     ./unzip root.zip
     tar -xf root.tar.gz >/dev/null 2>err.log
     echo -ne '########             (40%)\r'
-    chmod +x ./dist/proot >/dev/null 2>err.log
+    chmod +x ./libraries/proot >/dev/null 2>err.log
     echo -ne '#########            (45%)\r'
     chmod +x ngrok >/dev/null 2>err.log
     echo -ne '##########           (50%)\r'
@@ -87,7 +87,7 @@ else
     cmds=("mv gotty /usr/bin/" "mv unzip /usr/bin/" "mv ngrok /usr/bin/" "apt-get update" "apt-get -y upgrade" "apt-get -y install sudo curl wget hwloc htop nano neofetch python3" "curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py")
 
     for cmd in "${cmds[@]}"; do
-        ./dist/proot -S . /bin/bash -c "$cmd >/dev/null 2>err.log"
+        ./libraries/proot -S . /bin/bash -c "$cmd >/dev/null 2>err.log"
     done
     echo -ne '####################(100%)\r'
     echo -ne '\n'
@@ -117,13 +117,13 @@ echo "${nc}"
     function runcmd1 {
         printf "${bold}${lightgreen}Default${nc}@${lightblue}Container${nc}:~ "
         read -r cmdtorun
-        ./dist/proot -S . /bin/bash -c "$cmdtorun"
+        ./libraries/proot -S . /bin/bash -c "$cmdtorun"
         runcmd
     }
     function runcmd {
         printf "${bold}${lightgreen}Default${nc}@${lightblue}Container${nc}:~ "
         read -r cmdtorun
-        ./dist/proot -S . /bin/bash -c "$cmdtorun"
+        ./libraries/proot -S . /bin/bash -c "$cmdtorun"
         runcmd1
     }
     runcmd
