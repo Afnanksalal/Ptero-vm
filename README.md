@@ -1,3 +1,11 @@
+# :warning: Maintenance Notice
+
+According to [this comment](https://github.com/afnan007a/Ptero-vm/issues/32#issuecomment-1282276839), **Ptero-VM is no longer maintained**.
+
+It is encouraged to use [Harbor](https://github.com/RealTriassic/Harbor) instead as it brings many improvements over Ptero-VM such as a lot smaller footprint, full `AARCH64` support and the usage of Alpine Linux instead of Debian.
+
+You can grab the latest version of Harbor [here](https://github.com/RealTriassic/Harbor/actions).
+
 # Ptero-VM
 
 Root-Instance inside of pterodactyl's docker container with Proot.
