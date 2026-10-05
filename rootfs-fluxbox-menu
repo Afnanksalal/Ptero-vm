@@ -1,0 +1,6 @@
+[begin] (PteroVM)
+  [exec] (Terminal) {xterm -fa 'DejaVu Sans Mono' -fs 11}
+  [exec] (Files) {mc-desktop}
+  [exec] (Editor) {xterm -fa 'DejaVu Sans Mono' -fs 11 -e nano}
+  [exec] (Processes) {xterm -fa 'DejaVu Sans Mono' -fs 11 -e htop}
+[end]

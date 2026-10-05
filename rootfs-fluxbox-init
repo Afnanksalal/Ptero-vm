@@ -1,0 +1,5 @@
+session.screen0.toolbar.visible: true
+session.screen0.workspaces: 1
+session.menuFile: /root/.fluxbox/menu
+session.screen0.rootCommand: fbsetroot -solid #1e1e2e
+session.screen0.defaultDeco: NORMAL

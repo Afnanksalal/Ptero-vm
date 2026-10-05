@@ -1,0 +1,64 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-10-05T22:04:01+00:00",
+    "name": "PteroVM",
+    "author": "afnanksalal@pterovm.local",
+    "description": "noVNC desktop from one Java jar. The server port serves the desktop. The console prints the URL and the VNC password when it is ready. x86_64 only.",
+    "features": [],
+    "docker_images": {
+        "Java 17": "ghcr.io\/pterodactyl\/yolks:java_17",
+        "Java 21": "ghcr.io\/pterodactyl\/yolks:java_21",
+        "Java 11": "ghcr.io\/pterodactyl\/yolks:java_11"
+    },
+    "file_denylist": [],
+    "startup": "java -Xms128M -XX:MaxRAMPercentage=95.0 -jar {{SERVER_JARFILE}}",
+    "config": {
+        "files": "{}",
+        "startup": "{\n    \"done\": \"PteroVM ready\"\n}",
+        "logs": "{}",
+        "stop": "stop"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/ash\n# Fetches the PteroVM launcher. Does not delete the unpacked desktop.\nset -eu\ncd \/mnt\/server\n\nif [ -z \"${SERVER_JARFILE:-}\" ]; then\n    SERVER_JARFILE=server.jar\nfi\n\nif [ -n \"${DOWNLOAD_URL:-}\" ]; then\n    echo \"Downloading PteroVM\"\n    curl -fL --retry 3 --connect-timeout 15 -o \"${SERVER_JARFILE}.partial\" \"${DOWNLOAD_URL}\"\n    mv \"${SERVER_JARFILE}.partial\" \"${SERVER_JARFILE}\"\nelif [ -f \"${SERVER_JARFILE}\" ]; then\n    echo \"Keeping the existing ${SERVER_JARFILE}\"\nelse\n    echo \"No ${SERVER_JARFILE} and no download URL.\"\n    echo \"Upload pterovm.jar as ${SERVER_JARFILE}, or set a download URL and reinstall.\"\n    exit 1\nfi\n\necho \"PteroVM jar is ready.\"",
+            "container": "ghcr.io\/pterodactyl\/installers:alpine",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Server Jar File",
+            "description": "Jar file Wings starts. Leave this as server.jar.",
+            "env_variable": "SERVER_JARFILE",
+            "default_value": "server.jar",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:191",
+            "field_type": "text"
+        },
+        {
+            "name": "Download URL",
+            "description": "Optional URL of pterovm.jar. Used only on install or reinstall. Leave blank to keep the jar already in the server files.",
+            "env_variable": "DOWNLOAD_URL",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:512",
+            "field_type": "text"
+        },
+        {
+            "name": "VNC Password",
+            "description": "Desktop password, 8 characters or fewer. Leave blank to keep the saved password. The console prints the password in use.",
+            "env_variable": "VNC_PASSWORD",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:8",
+            "field_type": "text"
+        }
+    ]
+}

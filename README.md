@@ -1,58 +1,54 @@
-# :warning: Maintenance Notice
+# PteroVM
 
-According to [this comment](https://github.com/afnan007a/Ptero-vm/issues/32#issuecomment-1282276839), **Ptero-VM is no longer maintained**.
+we are soo back.
 
-It is encouraged to use [Harbor](https://github.com/RealTriassic/Harbor) instead as it brings many improvements over Ptero-VM such as a lot smaller footprint, full `AARCH64` support and the usage of Alpine Linux instead of Debian.
-
-You can grab the latest version of Harbor [here](https://github.com/RealTriassic/Harbor/actions).
-
-# Ptero-VM
-
-Root-Instance inside of pterodactyl's docker container with Proot.
+root inside the container the panel already gave you. one jar this time. java only. upload it as `server.jar` and start it like you would any other jar.
 
 ## ✨ Features
 
-- Root well, inside the docker container.
-- idk whatelse
+- root, inside the docker container
+- a real desktop on the port wings already assigned you (noVNC)
+- fluxbox, xterm, midnight commander, nano, htop
+- proot and a small alpine system baked into the jar, so you are not hunting for a second download
+- prints `PteroVM ready` plus the link when it is up
+- idk what else you want, the desktop was the missing part
 
 ## 💁‍♀️ How to use
 
-- first make a server (js/py/java server)
-- then download the [`server.py`](https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/server.py), [`server.jar`](https://github.com/RealTriassic/Ptero-VM-JAR/releases/download/latest/server.jar) or [`server.js`](https://raw.githubusercontent.com/afnan007a/Ptero-vm/main/server.js) file  
-- then upload the files to your server via file manager or sftp
-- then go to startup section of the server and name it `server.py` (if u made python server and downloaded the server.py file) or `server.js` (if u made js server and downloaded the server.js file)  `server.jar` (if u made java server and downloaded the server.jar file)
-- now start the server and it will install the files for you and run PteroVM
-- you're done
+renting a slot:
 
-## ✨ Preinstalled Packages
+- make a java server
+- grab [`pterovm.jar`](https://github.com/Afnanksalal/Ptero-vm/releases/latest) from the v2 release
+- upload it as `server.jar` (file manager or sftp, same as before)
+- startup stays `java -jar server.jar`
+- start it
+- you're done. the console prints the desktop link and the password
 
-- Htop
+you run the panel:
 
-- Neofetch
+- import [`egg-pterovm.json`](egg-pterovm.json)
+- images are the java 17, 21, and 11 yolks
+- it watches for `PteroVM ready` and the stop command is `stop`
+- leave the download url blank if the jar is already in the files. set it if you want install to fetch the jar
 
+x86_64. other arches just quit.
+
+## ✨ What's in the box
+
+- Fluxbox
+- Xterm
+- Midnight Commander
 - Nano
+- Htop
+- noVNC
 
-- Gotty
+v1 had gotty and ngrok in the box. this one doesn't. the browser thing is noVNC on the port you already have. you can still install whatever else you want once you are in.
 
-- Ngrok
+## ✨ v1 to v2
 
+v1 was `server.py`, `server.js`, and a separate jar, plus gotty and ngrok, and the fat binaries lived in PteroVM-Files. last real update was 2023, then it sat archived.
 
-## ✨ Addons
-
- __GoTTY:__
- 
- _GoTTY is a simple GoLang based command line tool that enables you to share your terminal(TTY) as a web application. It turns command line tools into web applications._
-
-- to run gotty just type `gotty -p <port> -w bash`in your terminal.
-
-- now it will be up and running, and it will show the ip and port of it in the console. copy paste it in ur browser and there you have remote terminal with gotty
-
-__Ngrok:__
- 
- _Ngrok is a tunneling software to portforward your server  to custom domains other than the numeric ip_
-
-- to run ngrok just type `ngrok http <port>` or `ngrok tcp <port>` ie: `ngrok tcp 22`  in your terminal and continue the steps. if you have any doubts [[Read this docs!]](https://ngrok.com/docs)
-
+v2 is the one jar, the desktop, the egg, and git lfs so that second repo can go away.
 
 ## ✨ Credits
 
@@ -62,17 +58,19 @@ __Ngrok:__
 
 - Io.Netty - Original Idea of PteroVM
 
-- Me - For making PteroVM lol!
+- Me - For making PteroVM lol
 
 ## ✨ Note
 
-**Please use a host which have atleast 3GB disk space or it will messup the installation.**
+please use a host with at least 3GB disk or the unpack will mess up. the jar itself is about 152MB and the system it unpacks is about 425MB, so 3GB still leaves you room.
+
+want to build it yourself? `build.sh` on linux. it pulls proot and alpine and spits out `pterovm.jar`.
 
 ## Disclaimer
 
-This script is made for educational purposes (obviously lol, not like you're gonna abuse it)  
-We are NOT responsible for any consequences,  
-As stated in the LICENSE:
+this is for educational purposes (obviously lol, not like you're gonna abuse it)  
+we are NOT responsible for any consequences,  
+as stated in the LICENSE:
 ```
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
