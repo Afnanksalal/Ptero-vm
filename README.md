@@ -30,7 +30,7 @@ you run the panel:
 - import [`egg-pterovm.json`](egg-pterovm.json)
 - images are the java 17, 21, and 11 yolks
 - it watches for `PteroVM ready` and the stop command is `stop`
-- leave the download url blank if the jar is already in the files. set it if you want install to fetch the jar
+- leave the download url blank. if `server.jar` is already there, install keeps it. if it isn't, install downloads the jar for that node. set the url only when you want some other jar
 
 three jars, one per arch. x86_64, arm64, riscv64. don't grab the wrong one, it will just refuse to unpack. the egg yolks are the normal java ones, so x86_64 and arm64 nodes are covered. a riscv node still needs a riscv java image. if the jar isn't uploaded yet and the download url is blank, install fetches the one that matches the node.
 
