@@ -146,7 +146,10 @@ public final class Main {
         if (arch.equals("aarch64") || arch.equals("arm64")) {
             return "aarch64";
         }
-        throw new IllegalStateException("Unsupported architecture: " + arch);
+        if (arch.equals("riscv64")) {
+            return "riscv64";
+        }
+        throw new IllegalStateException("PteroVM needs x86_64, aarch64, or riscv64 (this is " + arch + ")");
     }
 
     private static String firstEnv(String... names) {
@@ -169,7 +172,7 @@ public final class Main {
         }
         InputStream in = Main.class.getResourceAsStream(resource);
         if (in == null) {
-            throw new IllegalStateException("Missing embedded file " + resource);
+            throw new IllegalStateException("This jar has no " + resource + ". Download the release for this machine.");
         }
         try {
             Files.copy(in, dest, StandardCopyOption.REPLACE_EXISTING);

@@ -1,2 +1,4 @@
 build/
 *.partial
+pterovm.jar
+pterovm-*.jar

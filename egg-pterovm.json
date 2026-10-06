@@ -7,12 +7,12 @@
     "exported_at": "2026-10-05T22:04:01+00:00",
     "name": "PteroVM",
     "author": "afnanksalal@pterovm.local",
-    "description": "noVNC desktop from one Java jar. The server port serves the desktop. The console prints the URL and the VNC password when it is ready. x86_64 only.",
+    "description": "noVNC desktop from one Java jar. The server port serves the desktop. The console prints the URL and the VNC password when it is ready. Install grabs the jar for this machine: x86_64, aarch64, or riscv64.",
     "features": [],
     "docker_images": {
-        "Java 17": "ghcr.io\/pterodactyl\/yolks:java_17",
-        "Java 21": "ghcr.io\/pterodactyl\/yolks:java_21",
-        "Java 11": "ghcr.io\/pterodactyl\/yolks:java_11"
+        "Java 17": "ghcr.io/pterodactyl/yolks:java_17",
+        "Java 21": "ghcr.io/pterodactyl/yolks:java_21",
+        "Java 11": "ghcr.io/pterodactyl/yolks:java_11"
     },
     "file_denylist": [],
     "startup": "java -Xms128M -XX:MaxRAMPercentage=95.0 -jar {{SERVER_JARFILE}}",
@@ -24,8 +24,8 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/ash\n# Fetches the PteroVM launcher. Does not delete the unpacked desktop.\nset -eu\ncd \/mnt\/server\n\nif [ -z \"${SERVER_JARFILE:-}\" ]; then\n    SERVER_JARFILE=server.jar\nfi\n\nif [ -n \"${DOWNLOAD_URL:-}\" ]; then\n    echo \"Downloading PteroVM\"\n    curl -fL --retry 3 --connect-timeout 15 -o \"${SERVER_JARFILE}.partial\" \"${DOWNLOAD_URL}\"\n    mv \"${SERVER_JARFILE}.partial\" \"${SERVER_JARFILE}\"\nelif [ -f \"${SERVER_JARFILE}\" ]; then\n    echo \"Keeping the existing ${SERVER_JARFILE}\"\nelse\n    echo \"No ${SERVER_JARFILE} and no download URL.\"\n    echo \"Upload pterovm.jar as ${SERVER_JARFILE}, or set a download URL and reinstall.\"\n    exit 1\nfi\n\necho \"PteroVM jar is ready.\"",
-            "container": "ghcr.io\/pterodactyl\/installers:alpine",
+            "script": "#!/bin/ash\n# Fetches the PteroVM launcher for this machine. Does not delete the unpacked desktop.\nset -eu\ncd /mnt/server\n\nif [ -z \"${SERVER_JARFILE:-}\" ]; then\n    SERVER_JARFILE=server.jar\nfi\n\ncase \"$(uname -m)\" in\n    x86_64) ARCH=x86_64 ;;\n    aarch64|arm64) ARCH=aarch64 ;;\n    riscv64) ARCH=riscv64 ;;\n    *)\n        echo \"PteroVM is x86_64, aarch64, or riscv64. This machine is $(uname -m).\"\n        exit 1\n        ;;\nesac\n\nif [ -n \"${DOWNLOAD_URL:-}\" ]; then\n    echo \"Downloading PteroVM\"\n    curl -fL --retry 3 --connect-timeout 15 -o \"${SERVER_JARFILE}.partial\" \"${DOWNLOAD_URL}\"\n    mv \"${SERVER_JARFILE}.partial\" \"${SERVER_JARFILE}\"\nelif [ -f \"${SERVER_JARFILE}\" ]; then\n    echo \"Keeping the existing ${SERVER_JARFILE}\"\nelse\n    URL=\"https://github.com/Afnanksalal/Ptero-vm/releases/download/v2.1-${ARCH}/pterovm-${ARCH}.jar\"\n    echo \"Downloading PteroVM for ${ARCH}\"\n    curl -fL --retry 3 --connect-timeout 15 -o \"${SERVER_JARFILE}.partial\" \"$URL\"\n    mv \"${SERVER_JARFILE}.partial\" \"${SERVER_JARFILE}\"\nfi\n\necho \"PteroVM jar is ready.\"\n",
+            "container": "ghcr.io/pterodactyl/installers:alpine",
             "entrypoint": "ash"
         }
     },
@@ -42,7 +42,7 @@
         },
         {
             "name": "Download URL",
-            "description": "Optional URL of pterovm.jar. Used only on install or reinstall. Leave blank to keep the jar already in the server files.",
+            "description": "Optional URL of a pterovm jar. Used only on install or reinstall. Leave blank and a missing jar is downloaded for this machine's arch.",
             "env_variable": "DOWNLOAD_URL",
             "default_value": "",
             "user_viewable": true,

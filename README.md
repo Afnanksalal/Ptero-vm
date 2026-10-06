@@ -10,6 +10,7 @@ root inside the container the panel already gave you. one jar this time. java on
 - a real desktop on the port wings already assigned you (noVNC)
 - fluxbox, xterm, midnight commander, nano, htop
 - proot and a small alpine system baked into the jar, so you are not hunting for a second download
+- x86_64, arm64, and riscv64. 32-bit arm is not in the jar
 - prints `PteroVM ready` plus the link when it is up
 - idk what else you want, the desktop was the missing part
 
@@ -18,7 +19,7 @@ root inside the container the panel already gave you. one jar this time. java on
 renting a slot:
 
 - make a java server
-- grab [`pterovm.jar`](https://github.com/Afnanksalal/Ptero-vm/releases/latest) from the v2 release
+- grab the jar for that machine, not all of them: [x86_64](https://github.com/Afnanksalal/Ptero-vm/releases/tag/v2.1-x86_64), [arm64](https://github.com/Afnanksalal/Ptero-vm/releases/tag/v2.1-aarch64), [riscv64](https://github.com/Afnanksalal/Ptero-vm/releases/tag/v2.1-riscv64)
 - upload it as `server.jar` (file manager or sftp, same as before)
 - startup stays `java -jar server.jar`
 - start it
@@ -31,7 +32,7 @@ you run the panel:
 - it watches for `PteroVM ready` and the stop command is `stop`
 - leave the download url blank if the jar is already in the files. set it if you want install to fetch the jar
 
-x86_64. other arches just quit.
+three jars, one per arch. x86_64, arm64, riscv64. don't grab the wrong one, it will just refuse to unpack. the egg yolks are the normal java ones, so x86_64 and arm64 nodes are covered. a riscv node still needs a riscv java image. if the jar isn't uploaded yet and the download url is blank, install fetches the one that matches the node.
 
 ## ✨ What's in the box
 
@@ -48,7 +49,7 @@ v1 had gotty and ngrok in the box. this one doesn't. the browser thing is noVNC 
 
 v1 was `server.py`, `server.js`, and a separate jar, plus gotty and ngrok, and the fat binaries lived in PteroVM-Files. last real update was 2023, then it sat archived.
 
-v2 is the one jar, the desktop, the egg, and git lfs so that second repo can go away.
+v2 is the one jar, the desktop, and the egg. v2.1 splits that jar per arch so you are not downloading the other two.
 
 ## ✨ Credits
 
@@ -64,7 +65,7 @@ v2 is the one jar, the desktop, the egg, and git lfs so that second repo can go 
 
 please use a host with at least 3GB disk or the unpack will mess up. the jar itself is about 152MB and the system it unpacks is about 425MB, so 3GB still leaves you room.
 
-want to build it yourself? `build.sh` on linux. it pulls proot and alpine and spits out `pterovm.jar`.
+want to build it yourself? `build.sh` on linux. it pulls proot and alpine and spits out `pterovm-x86_64.jar`, `pterovm-aarch64.jar`, and `pterovm-riscv64.jar`. cross builds need qemu-user-static.
 
 ## Disclaimer
 
