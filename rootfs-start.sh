@@ -37,8 +37,11 @@ done
 fluxbox >/var/log/fluxbox.log 2>&1 &
 xterm -geometry 110x32+24+24 -fa 'DejaVu Sans Mono' -fs 11 -title 'PteroVM' >/var/log/xterm.log 2>&1 &
 # Raw VNC stays on localhost. The allocated port is the noVNC page only.
-x11vnc -display :1 -rfbport 5900 -localhost -forever -shared -noxdamage \
-    -passwdfile /root/vnc.pass >/var/log/x11vnc.log 2>&1 &
+# libvncserver scans fcntl(0..RLIMIT_NOFILE) before accept(); on Docker/Wings
+# hosts with huge ulimit -n (e.g. 1048576), proot ptrace turns that into a
+# multi-minute 100% CPU hang on connect. Cap it for x11vnc only.
+(ulimit -n 1024 2>/dev/null || true; exec x11vnc -display :1 -rfbport 5900 -localhost -forever -shared -noxdamage \
+    -passwdfile /root/vnc.pass >/var/log/x11vnc.log 2>&1) &
 sleep 0.4
 if ! pidof x11vnc >/dev/null 2>&1; then
     echo "x11vnc failed to start" >&2
